@@ -1,0 +1,13 @@
+on: push
+name: keyword-monitor
+jobs:
+  keyword-releaser:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: keyword-releaser
+      uses: managedkaos/keyword-releaser@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        args: FIXED
